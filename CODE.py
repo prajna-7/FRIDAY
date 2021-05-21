@@ -1,19 +1,15 @@
-import pyttsx3 #pip install pyttsx3
-import speech_recognition as sr #pip install speechRecognition
+import pyttsx3   # pip install pyttsx3
+import speech_recognition as sr   # pip install speechRecognition
 import datetime
-import wikipedia #pip install wikipedia
+import wikipedia   # pip install wikipedia
 import webbrowser
-import os
 import smtplib
 import pyjokes
 import pywhatkit
-import operator
-
-
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 # print(voices[1].id)
-engine.setProperty('voice', voices[0].id)
+engine.setProperty('voices', voices[0].id)
 
 
 def speak(audio):
@@ -21,7 +17,7 @@ def speak(audio):
     engine.runAndWait()
 
 
-def wishMe():
+def wishme():
     hour = int(datetime.datetime.now().hour)
     if hour>=0 and hour<12:
         speak("Good Morning! Mr prajna")
@@ -64,7 +60,7 @@ def sendEmail(to, content):
 
 
 if __name__ == "__main__":
-    wishMe()
+    wishme()
     while True:
     # if 1:
         query = takeCommand().lower()
